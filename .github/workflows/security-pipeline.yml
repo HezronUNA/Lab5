@@ -25,9 +25,7 @@ jobs:
         run: npx eslint . --ext .js,.ts || true
 
       - name: 🧪 Ejecutar pruebas unitarias
-        run: |
-          chmod +x ./node_modules/.bin/jest
-          npx jest --passWithNoTests
+        run: npm test
 
       - name: 🔒 Escaneo estático con Semgrep
         uses: returntocorp/semgrep-action@v1
