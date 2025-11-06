@@ -1,4 +1,7 @@
 {
+  "type": "module",
+  "name": "laboratorio5",
+  "version": "1.0.0",
   "dependencies": {
     "express": "*",
     "mocha": "^10.2.0",

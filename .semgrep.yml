@@ -1,0 +1,6 @@
+rules:
+  - id: no-eval
+    pattern: eval(...)
+    message: "Evita usar eval(), es inseguro."
+    severity: ERROR
+    languages: [javascript, typescript]

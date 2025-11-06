@@ -1,0 +1,3105 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JS-BODYPARSER-7926860",
+      "title": "Asymmetric Resource Consumption (Amplification)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Adam Korcz"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<1.20.3"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "1.20.3"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "high",
+      "cvssScore": 8.2,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "body-parser",
+      "references": [
+        {
+          "url": "https://github.com/expressjs/body-parser/commit/b2695c4450f06ba3b0ccf48d872a229bb41c9bce",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2024-09-21T01:11:54.393291Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2024-09-11T13:47:56.137452Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.2,
+          "cvssVersion": "4.0",
+          "modificationTime": "2024-09-11T11:25:10.814135Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T11:25:10.814135Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-21T01:11:54.393291Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:47:56.137452Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Asymmetric Resource Consumption (Amplification) via the `extendedparser` and `urlencoded` functions when the URL encoding process is enabled. An attacker can flood the server with a large number of specially crafted requests.\n## Remediation\nUpgrade `body-parser` to version 1.20.3 or higher.\n## References\n- [GitHub Commit](https://github.com/expressjs/body-parser/commit/b2695c4450f06ba3b0ccf48d872a229bb41c9bce)\n",
+      "epssDetails": {
+        "percentile": "0.83424",
+        "probability": "0.02072",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-45590"
+        ],
+        "CWE": [
+          "CWE-405"
+        ]
+      },
+      "packageName": "body-parser",
+      "proprietary": false,
+      "creationTime": "2024-09-11T06:00:37.938252Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-10T16:15:21Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-11T11:22:36.608327Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-09-21T01:11:54.393291Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "body-parser@1.20.1"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.20.0",
+        "body-parser@1.20.3"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "body-parser",
+      "version": "1.20.1"
+    },
+    {
+      "id": "SNYK-JS-BRACEEXPANSION-9789073",
+      "title": "Regular Expression Denial of Service (ReDoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L/E:P",
+      "credit": [
+        "mmmsssttt404"
+      ],
+      "semver": {
+        "vulnerable": [
+          ">=1.0.0 <1.1.12",
+          ">=2.0.0 <2.0.2",
+          ">=3.0.0 <3.0.1",
+          ">=4.0.0 <4.0.1"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "1.1.12",
+        "2.0.2",
+        "3.0.1",
+        "4.0.1"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "low",
+      "cvssScore": 2.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "brace-expansion",
+      "references": [
+        {
+          "url": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
+          "title": "GitHub Advisory"
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466",
+          "title": "GitHub Gist"
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion/pull/65",
+          "title": "GitHub PR"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 3.1,
+          "modificationTime": "2025-06-10T01:13:43.537639Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 3.1,
+          "modificationTime": "2025-06-19T05:30:43.149011Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 2.5,
+          "modificationTime": "2025-10-24T17:39:59.156383Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-06-16T08:51:48.041497Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L/E:P",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-16T08:51:48.041497Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "NVD",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-10T01:13:43.537639Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "Red Hat",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-19T05:30:43.149011Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+          "assigner": "SUSE",
+          "severity": "low",
+          "baseScore": 2.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-10-24T17:39:59.156383Z"
+        }
+      ],
+      "description": "## Overview\n[brace-expansion](https://github.com/juliangruber/brace-expansion) is a Brace expansion as known from sh/bash\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) in the `expand()` function, which is prone to catastrophic backtracking on very long malicious inputs.\n## PoC\n```js\r\nimport index from \"./index.js\";\r\n\r\nlet str = \"{a}\" + \",\".repeat(100000) + \"\\u0000\";\r\n\r\nlet startTime = performance.now();\r\n\r\nconst result = index(str);\r\n\r\nlet endTime = performance.now();\r\n\r\nlet timeTaken = endTime - startTime;\r\n\r\nconsole.log(`匹配耗时: ${timeTaken.toFixed(3)} 毫秒`);\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `brace-expansion` to version 1.1.12, 2.0.2, 3.0.1, 4.0.1 or higher.\n## References\n- [GitHub Advisory](https://github.com/advisories/GHSA-v6h2-p8h4-qcjw)\n- [GitHub Commit](https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2)\n- [GitHub Gist](https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466)\n- [GitHub PR](https://github.com/juliangruber/brace-expansion/pull/65)\n",
+      "epssDetails": {
+        "percentile": "0.05763",
+        "probability": "0.00026",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-5889"
+        ],
+        "CWE": [
+          "CWE-1333"
+        ],
+        "GHSA": [
+          "GHSA-v6h2-p8h4-qcjw"
+        ]
+      },
+      "packageName": "brace-expansion",
+      "proprietary": false,
+      "creationTime": "2025-04-22T10:41:28.859488Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-04-22T09:04:33Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2025-06-12T06:58:37.742572Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-10-24T17:39:59.156383Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "glob@7.2.0",
+        "minimatch@3.1.2",
+        "brace-expansion@1.1.11"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@11.0.1",
+        "glob@10.4.5",
+        "minimatch@9.0.5",
+        "brace-expansion@2.0.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "brace-expansion",
+      "version": "1.1.11"
+    },
+    {
+      "id": "SNYK-JS-BRACEEXPANSION-9789073",
+      "title": "Regular Expression Denial of Service (ReDoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L/E:P",
+      "credit": [
+        "mmmsssttt404"
+      ],
+      "semver": {
+        "vulnerable": [
+          ">=1.0.0 <1.1.12",
+          ">=2.0.0 <2.0.2",
+          ">=3.0.0 <3.0.1",
+          ">=4.0.0 <4.0.1"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "1.1.12",
+        "2.0.2",
+        "3.0.1",
+        "4.0.1"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "low",
+      "cvssScore": 2.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "brace-expansion",
+      "references": [
+        {
+          "url": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
+          "title": "GitHub Advisory"
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466",
+          "title": "GitHub Gist"
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion/pull/65",
+          "title": "GitHub PR"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 3.1,
+          "modificationTime": "2025-06-10T01:13:43.537639Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 3.1,
+          "modificationTime": "2025-06-19T05:30:43.149011Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 2.5,
+          "modificationTime": "2025-10-24T17:39:59.156383Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-06-16T08:51:48.041497Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L/E:P",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-16T08:51:48.041497Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "NVD",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-10T01:13:43.537639Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "Red Hat",
+          "severity": "low",
+          "baseScore": 3.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-19T05:30:43.149011Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+          "assigner": "SUSE",
+          "severity": "low",
+          "baseScore": 2.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-10-24T17:39:59.156383Z"
+        }
+      ],
+      "description": "## Overview\n[brace-expansion](https://github.com/juliangruber/brace-expansion) is a Brace expansion as known from sh/bash\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) in the `expand()` function, which is prone to catastrophic backtracking on very long malicious inputs.\n## PoC\n```js\r\nimport index from \"./index.js\";\r\n\r\nlet str = \"{a}\" + \",\".repeat(100000) + \"\\u0000\";\r\n\r\nlet startTime = performance.now();\r\n\r\nconst result = index(str);\r\n\r\nlet endTime = performance.now();\r\n\r\nlet timeTaken = endTime - startTime;\r\n\r\nconsole.log(`匹配耗时: ${timeTaken.toFixed(3)} 毫秒`);\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `brace-expansion` to version 1.1.12, 2.0.2, 3.0.1, 4.0.1 or higher.\n## References\n- [GitHub Advisory](https://github.com/advisories/GHSA-v6h2-p8h4-qcjw)\n- [GitHub Commit](https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2)\n- [GitHub Gist](https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466)\n- [GitHub PR](https://github.com/juliangruber/brace-expansion/pull/65)\n",
+      "epssDetails": {
+        "percentile": "0.05763",
+        "probability": "0.00026",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-5889"
+        ],
+        "CWE": [
+          "CWE-1333"
+        ],
+        "GHSA": [
+          "GHSA-v6h2-p8h4-qcjw"
+        ]
+      },
+      "packageName": "brace-expansion",
+      "proprietary": false,
+      "creationTime": "2025-04-22T10:41:28.859488Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-04-22T09:04:33Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2025-06-12T06:58:37.742572Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-10-24T17:39:59.156383Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "minimatch@5.0.1",
+        "brace-expansion@2.0.1"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@10.2.0",
+        "minimatch@5.0.1",
+        "brace-expansion@2.0.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "brace-expansion",
+      "version": "2.0.1"
+    },
+    {
+      "id": "SNYK-JS-BRACES-6838727",
+      "title": "Excessive Platform Resource Consumption within a Loop",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+      "credit": [
+        "Mário Teixeira"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<3.0.3"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "3.0.3"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "high",
+      "cvssScore": 7.5,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "braces",
+      "references": [
+        {
+          "url": "https://github.com/micromatch/braces/commit/a5851e57f45c3431a94d83fc565754bc10f5bbc3",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/micromatch/braces/issues/35",
+          "title": "GitHub Issue"
+        },
+        {
+          "url": "https://github.com/micromatch/braces/pull/37",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://github.com/micromatch/braces/blob/98414f9f1fabe021736e26836d8306d5de747e0d/lib/parse.js%23L308",
+          "title": "Vulnerable Code"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2024-05-15T13:35:48.924600Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2024-10-30T11:04:23.675370Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-02-18T11:30:43.161093Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-05-15T13:35:48.924600Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-10-30T11:04:23.675370Z"
+        }
+      ],
+      "description": "## Overview\n[braces](https://www.npmjs.com/package/braces) is a Bash-like brace expansion, implemented in JavaScript.\n\nAffected versions of this package are vulnerable to Excessive Platform Resource Consumption within a Loop due improper limitation of the number of characters it can handle, through the `parse` function. An attacker can cause the application to allocate excessive memory and potentially crash by sending imbalanced braces as input.\n## PoC\n```js\r\nconst { braces } = require('micromatch');\r\n\r\nconsole.log(\"Executing payloads...\");\r\n\r\nconst maxRepeats = 10;\r\n\r\nfor (let repeats = 1; repeats <= maxRepeats; repeats += 1) {\r\n  const payload = '{'.repeat(repeats*90000);\r\n\r\n  console.log(`Testing with ${repeats} repeats...`);\r\n  const startTime = Date.now();\r\n  braces(payload);\r\n  const endTime = Date.now();\r\n  const executionTime = endTime - startTime;\r\n  console.log(`Regex executed in ${executionTime / 1000}s.\\n`);\r\n} \r\n```\n## Remediation\nUpgrade `braces` to version 3.0.3 or higher.\n## References\n- [GitHub Commit](https://github.com/micromatch/braces/commit/a5851e57f45c3431a94d83fc565754bc10f5bbc3)\n- [GitHub Issue](https://github.com/micromatch/braces/issues/35)\n- [GitHub PR](https://github.com/micromatch/braces/pull/37)\n- [Vulnerable Code](https://github.com/micromatch/braces/blob/98414f9f1fabe021736e26836d8306d5de747e0d/lib/parse.js#L308)\n",
+      "epssDetails": {
+        "percentile": "0.37521",
+        "probability": "0.00159",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-4068"
+        ],
+        "CWE": [
+          "CWE-1050"
+        ]
+      },
+      "packageName": "braces",
+      "proprietary": false,
+      "creationTime": "2024-05-13T14:36:53.707650Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-05-13T10:40:14Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-05-13T14:36:53.942014Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-02-18T11:30:43.161093Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "chokidar@3.5.3",
+        "braces@3.0.2"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@10.2.0",
+        "chokidar@3.5.3",
+        "braces@3.0.3"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "braces",
+      "version": "3.0.2"
+    },
+    {
+      "id": "SNYK-JS-COOKIE-8163060",
+      "title": "Cross-site Scripting (XSS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.7.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "0.7.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "cookie",
+      "references": [
+        {
+          "url": "https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/jshttp/cookie/pull/167",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2316549",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "cvssV3BaseScore": 3.7,
+          "modificationTime": "2025-04-29T08:08:05.922006Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-03-10T06:41:09.255374Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 3.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-03-10T06:41:09.255374Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "low",
+          "baseScore": 3.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-04-29T08:08:05.922006Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Cross-site Scripting (XSS) via the cookie `name`, `path`, or `domain`, which can be used to set unexpected values to other cookie fields.\r\n\r\n## Workaround\r\nUsers who are not able to upgrade to the fixed version should avoid passing untrusted or arbitrary values for the cookie fields and ensure they are set by the application instead of user input.\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `cookie` to version 0.7.0 or higher.\n## References\n- [GitHub Commit](https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c)\n- [GitHub PR](https://github.com/jshttp/cookie/pull/167)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2316549)\n",
+      "epssDetails": {
+        "percentile": "0.21554",
+        "probability": "0.00069",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-47764"
+        ],
+        "CWE": [
+          "CWE-79"
+        ],
+        "GHSA": [
+          "GHSA-pxg6-pf52-xh8x"
+        ]
+      },
+      "packageName": "cookie",
+      "proprietary": false,
+      "creationTime": "2024-10-06T09:52:27.790081Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-10-04T20:31:00Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-10-06T09:52:28.084562Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-04-29T08:08:05.922006Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "cookie@0.5.0"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.21.1",
+        "cookie@0.7.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "cookie",
+      "version": "0.5.0"
+    },
+    {
+      "id": "SNYK-JS-COOKIE-8163060",
+      "title": "Cross-site Scripting (XSS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.7.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "0.7.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "cookie",
+      "references": [
+        {
+          "url": "https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/jshttp/cookie/pull/167",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2316549",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "low",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "cvssV3BaseScore": 3.7,
+          "modificationTime": "2025-04-29T08:08:05.922006Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-03-10T06:41:09.255374Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 3.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-03-10T06:41:09.255374Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "low",
+          "baseScore": 3.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-04-29T08:08:05.922006Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Cross-site Scripting (XSS) via the cookie `name`, `path`, or `domain`, which can be used to set unexpected values to other cookie fields.\r\n\r\n## Workaround\r\nUsers who are not able to upgrade to the fixed version should avoid passing untrusted or arbitrary values for the cookie fields and ensure they are set by the application instead of user input.\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `cookie` to version 0.7.0 or higher.\n## References\n- [GitHub Commit](https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c)\n- [GitHub PR](https://github.com/jshttp/cookie/pull/167)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2316549)\n",
+      "epssDetails": {
+        "percentile": "0.21554",
+        "probability": "0.00069",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-47764"
+        ],
+        "CWE": [
+          "CWE-79"
+        ],
+        "GHSA": [
+          "GHSA-pxg6-pf52-xh8x"
+        ]
+      },
+      "packageName": "cookie",
+      "proprietary": false,
+      "creationTime": "2024-10-06T09:52:27.790081Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-10-04T20:31:00Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-10-06T09:52:28.084562Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-04-29T08:08:05.922006Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "socket.io@4.7.2",
+        "engine.io@6.5.2",
+        "cookie@0.4.2"
+      ],
+      "upgradePath": [
+        false,
+        "socket.io@4.8.0",
+        "engine.io@6.6.4",
+        "cookie@0.7.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "cookie",
+      "version": "0.4.2"
+    },
+    {
+      "id": "SNYK-JS-EXPRESS-6474509",
+      "title": "Open Redirect",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "credit": [
+        "FDrag0n"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<4.19.2",
+          ">=5.0.0-alpha.1 <5.0.0-beta.3"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "4.19.2",
+        "5.0.0-beta.3"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "express",
+      "references": [
+        {
+          "url": "https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94",
+          "title": "Github Commit"
+        },
+        {
+          "url": "https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/koajs/koa/issues/1800",
+          "title": "Github Issue"
+        },
+        {
+          "url": "https://github.com/expressjs/express/pull/5551",
+          "title": "GitHub PR"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.1,
+          "modificationTime": "2024-06-08T14:11:46.700097Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-26T07:34:23.916299Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-06-08T14:11:46.700097Z"
+        }
+      ],
+      "description": "## Overview\n[express](https://github.com/expressjs/express) is a minimalist web framework.\n\nAffected versions of this package are vulnerable to Open Redirect due to the implementation of URL encoding using `encodeurl` before passing it to the `location` header. This can lead to unexpected evaluations of malformed URLs by common redirect allow list implementations in applications, allowing an attacker to bypass a properly implemented allow list and redirect users to malicious sites.\n## Remediation\nUpgrade `express` to version 4.19.2, 5.0.0-beta.3 or higher.\n## References\n- [Github Commit](https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94)\n- [GitHub Commit](https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd)\n- [Github Issue](https://github.com/koajs/koa/issues/1800)\n- [GitHub PR](https://github.com/expressjs/express/pull/5551)\n",
+      "epssDetails": {
+        "percentile": "0.12772",
+        "probability": "0.00043",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-29041"
+        ],
+        "CWE": [
+          "CWE-601"
+        ]
+      },
+      "packageName": "express",
+      "proprietary": false,
+      "creationTime": "2024-03-21T07:57:40.545565Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-03-20T15:16:03Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-03-26T07:34:23.916017Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-06-08T14:11:46.700097Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "express@4.18.2"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.19.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "express",
+      "version": "4.18.2"
+    },
+    {
+      "id": "SNYK-JS-EXPRESS-7926867",
+      "title": "Cross-site Scripting",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "credit": [
+        "AdamKorcz"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<4.20.0",
+          ">=5.0.0-alpha.1 <5.0.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "4.20.0",
+        "5.0.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 5.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "express",
+      "references": [
+        {
+          "url": "https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 4.7,
+          "modificationTime": "2024-09-21T01:11:54.115308Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5,
+          "modificationTime": "2024-09-11T13:47:33.875106Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:L/VA:N/SC:L/SI:L/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.1,
+          "cvssVersion": "4.0",
+          "modificationTime": "2024-09-11T12:24:12.257485Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T12:24:12.257485Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 4.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-21T01:11:54.115308Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:47:33.875106Z"
+        }
+      ],
+      "description": "## Overview\n[express](https://github.com/expressjs/express) is a minimalist web framework.\n\nAffected versions of this package are vulnerable to Cross-site Scripting due to improper handling of user input in the `response.redirect` method. An attacker can execute arbitrary code by passing malicious input to this method.\r\n\r\n\r\n**Note**\r\n\r\nTo exploit this vulnerability, the following conditions are required:\r\n\r\n1) The attacker should be able to control the input to `response.redirect()`\r\n\r\n2) express must not redirect before the template appears\r\n\r\n3) the browser must not complete redirection before:\r\n\r\n4) the user must click on the link in the template\n## Remediation\nUpgrade `express` to version 4.20.0, 5.0.0 or higher.\n## References\n- [GitHub Commit](https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553)\n",
+      "epssDetails": {
+        "percentile": "0.20432",
+        "probability": "0.00065",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-43796"
+        ],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "packageName": "express",
+      "proprietary": false,
+      "creationTime": "2024-09-11T06:44:36.871270Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-10T15:15:17Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-11T12:24:12.250365Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-09-21T01:11:54.115308Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "express@4.18.2"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.20.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "express",
+      "version": "4.18.2"
+    },
+    {
+      "id": "SNYK-JS-INFLIGHT-6095116",
+      "title": "Missing Release of Resource after Effective Lifetime",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+      "credit": [
+        "jkomyno"
+      ],
+      "semver": {
+        "vulnerable": [
+          "*"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.2,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "inflight",
+      "references": [
+        {
+          "url": "https://github.com/isaacs/inflight/issues/5",
+          "title": "GitHub Issue"
+        },
+        {
+          "url": "https://github.com/logdna/logdna-agent/pull/157",
+          "title": "GitHub PR"
+        }
+      ],
+      "cvssDetails": [],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.2,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-13T12:24:01.140165Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Missing Release of Resource after Effective Lifetime via the `makeres` function due to improperly deleting keys from the `reqs` object after execution of callbacks. This behavior causes the keys to remain in the `reqs` object, which leads to resource exhaustion.\r\n\r\nExploiting this vulnerability results in crashing the `node` process or in the application crash.\r\n\r\n**Note:**\r\nThis library is not maintained, and currently, there is no fix for this issue. To overcome this vulnerability, several dependent packages have eliminated the use of this library.\r\n\r\nTo trigger the memory leak, an attacker would need to have the ability to execute or influence the asynchronous operations that use the inflight module within the application. This typically requires access to the internal workings of the server or application, which is not commonly exposed to remote users. Therefore, “Attack vector” is marked as “Local”.\n## PoC\n```js\r\nconst inflight = require('inflight');\r\n\r\nfunction testInflight() {\r\n  let i = 0;\r\n  function scheduleNext() {\r\n    let key = `key-${i++}`;\r\n    const callback = () => {\r\n    };\r\n    for (let j = 0; j < 1000000; j++) {\r\n      inflight(key, callback);\r\n    }\r\n\r\n    setImmediate(scheduleNext);\r\n  }\r\n\r\n\r\n  if (i % 100 === 0) {\r\n    console.log(process.memoryUsage());\r\n  }\r\n\r\n  scheduleNext();\r\n}\r\n\r\ntestInflight();\r\n```\n## Remediation\nThere is no fixed version for `inflight`.\n## References\n- [GitHub Issue](https://github.com/isaacs/inflight/issues/5)\n- [GitHub PR](https://github.com/logdna/logdna-agent/pull/157)\n",
+      "epssDetails": null,
+      "identifiers": {
+        "CVE": [],
+        "CWE": [
+          "CWE-772"
+        ]
+      },
+      "packageName": "inflight",
+      "proprietary": false,
+      "creationTime": "2023-11-30T12:51:43.483198Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2023-11-28T12:47:27Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2023-11-30T12:52:55.469185Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-03-13T12:24:01.140165Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "glob@7.2.0",
+        "inflight@1.0.6"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@11.0.1",
+        "glob@10.4.5"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "inflight",
+      "version": "1.0.6"
+    },
+    {
+      "id": "SNYK-JS-NANOID-8492085",
+      "title": "Improper Input Validation",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "credit": [
+        "Kris Reeves"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<3.3.8",
+          ">=4.0.0 <5.0.9"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "3.3.8",
+        "5.0.9"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "nanoid",
+      "references": [
+        {
+          "url": "https://github.com/ai/nanoid/commit/d643045f40d6dc8afa000a644d857da1436ed08c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/ai/nanoid/pull/510",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://github.com/ai/nanoid/releases/tag/5.0.9",
+          "title": "GitHub Release"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2024-12-09T15:07:34.584562Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-03-09T20:50:41.122267Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 3.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-03-09T20:50:41.122267Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-12-09T15:07:34.584562Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Improper Input Validation due to the mishandling of fractional values in the `nanoid` function. By exploiting this vulnerability, an attacker can achieve an infinite loop.\n## Remediation\nUpgrade `nanoid` to version 3.3.8, 5.0.9 or higher.\n## References\n- [GitHub Commit](https://github.com/ai/nanoid/commit/d643045f40d6dc8afa000a644d857da1436ed08c)\n- [GitHub PR](https://github.com/ai/nanoid/pull/510)\n- [GitHub Release](https://github.com/ai/nanoid/releases/tag/5.0.9)\n",
+      "epssDetails": {
+        "percentile": "0.04047",
+        "probability": "0.00020",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-55565"
+        ],
+        "CWE": [
+          "CWE-20"
+        ],
+        "GHSA": [
+          "GHSA-mwcw-c2x4-8c55"
+        ]
+      },
+      "packageName": "nanoid",
+      "proprietary": false,
+      "creationTime": "2024-12-09T08:45:56.017874Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-12-09T01:43:14Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-12-09T08:45:56.399619Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-03-09T20:50:41.122267Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "nanoid@3.3.3"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@10.3.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "nanoid",
+      "version": "3.3.3"
+    },
+    {
+      "id": "SNYK-JS-PATHTOREGEXP-7925106",
+      "title": "Regular Expression Denial of Service (ReDoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L/E:P",
+      "credit": [
+        "Blake Embrey"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.1.10",
+          ">=0.2.0 <1.9.0",
+          ">=2.0.0 <3.3.0",
+          ">=4.0.0 <6.3.0",
+          ">=7.0.0 <8.0.0"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "0.1.10",
+        "1.9.0",
+        "3.3.0",
+        "6.3.0",
+        "8.0.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.9,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "path-to-regexp",
+      "references": [
+        {
+          "url": "https://github.com/pillarjs/path-to-regexp/commit/29b96b4a1de52824e1ca0f49a701183cc4ed476f",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/pillarjs/path-to-regexp/commit/60f2121e9b66b7b622cc01080df0aabda9eedee6",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/pillarjs/path-to-regexp/commit/f73ec6c86b06f544b977119c2b62a16de480a6a9",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/pillarjs/path-to-regexp/releases/tag/v7.1.0",
+          "title": "Strict Mode Release Note"
+        },
+        {
+          "url": "https://blakeembrey.com/posts/2024-09-web-redos/",
+          "title": "Vulnerability Write-up"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-09-10T13:33:00.998289Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.9,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-06-16T06:59:36.219457Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-06-16T06:59:36.219457Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-10T13:33:00.998289Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) when including multiple regular expression parameters in a single segment, which will produce the regular expression `/^\\/([^\\/]+?)-([^\\/]+?)\\/?$/`, if two parameters within a single segment are separated by a character other than a `/` or `.`. Poor performance will block the event loop and can lead to a DoS.\r\n\r\n**Note:**\r\nWhile the 8.0.0 release has completely eliminated the vulnerable functionality, prior versions that have received the patch to mitigate backtracking may still be vulnerable if custom regular expressions are used. So it is strongly recommended for regular expression input to be controlled to avoid malicious performance degradation in those versions. This behavior is enforced as of version 7.1.0 via the `strict` option, which returns an error if a dangerous regular expression is detected.\r\n\r\n## Workaround\r\nThis vulnerability can be avoided by using a custom regular expression for parameters after the first in a segment, which excludes `-` and `/`.\n## PoC\n```js\r\n/a${'-a'.repeat(8_000)}/a\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `path-to-regexp` to version 0.1.10, 1.9.0, 3.3.0, 6.3.0, 8.0.0 or higher.\n## References\n- [GitHub Commit](https://github.com/pillarjs/path-to-regexp/commit/29b96b4a1de52824e1ca0f49a701183cc4ed476f)\n- [GitHub Commit](https://github.com/pillarjs/path-to-regexp/commit/60f2121e9b66b7b622cc01080df0aabda9eedee6)\n- [GitHub Commit](https://github.com/pillarjs/path-to-regexp/commit/f73ec6c86b06f544b977119c2b62a16de480a6a9)\n- [Strict Mode Release Note](https://github.com/pillarjs/path-to-regexp/releases/tag/v7.1.0)\n- [Vulnerability Write-up](https://blakeembrey.com/posts/2024-09-web-redos/)\n",
+      "epssDetails": {
+        "percentile": "0.20159",
+        "probability": "0.00064",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-45296"
+        ],
+        "CWE": [
+          "CWE-1333"
+        ],
+        "GHSA": [
+          "GHSA-9wv6-86v2-598j"
+        ]
+      },
+      "packageName": "path-to-regexp",
+      "proprietary": false,
+      "creationTime": "2024-09-10T06:12:52.186963Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-09T19:40:10Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-10T08:00:38.971163Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-06-16T06:59:36.219457Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "path-to-regexp@0.1.7"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.20.0",
+        "path-to-regexp@0.1.10"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "path-to-regexp",
+      "version": "0.1.7"
+    },
+    {
+      "id": "SNYK-JS-PATHTOREGEXP-8482416",
+      "title": "Regular Expression Denial of Service (ReDoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L/E:P",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.1.12"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "0.1.12"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.9,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "path-to-regexp",
+      "references": [
+        {
+          "url": "https://blakeembrey.com/posts/2024-09-web-redos",
+          "title": "Blog Post"
+        },
+        {
+          "url": "https://github.com/pillarjs/path-to-regexp/commit/f01c26a013b1889f0c217c643964513acf17f6a4",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-12-07T13:35:59.477578Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.9,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-04-06T10:02:44.333400Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-04-06T10:02:44.333400Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-12-07T13:35:59.477578Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS) when including multiple regular expression parameters in a single segment, when the separator is not `.` (e.g. no `/:a-:b`). Poor performance will block the event loop and can lead to a DoS.\r\n\r\n**Note:**\r\n\r\nThis issue is caused due to an incomplete fix for [CVE-2024-45296](https://security.snyk.io/vuln/SNYK-JS-PATHTOREGEXP-7925106).\r\n\r\n## Workarounds\r\n\r\nThis can be mitigated by avoiding using two parameters within a single path segment, when the separator is not `.` (e.g. no `/:a-:b`). Alternatively, the regex used for both parameters can be defined to ensure they do not overlap to allow backtracking.\n## PoC\n```js\r\n/a${'-a'.repeat(8_000)}/a\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `path-to-regexp` to version 0.1.12 or higher.\n## References\n- [Blog Post](https://blakeembrey.com/posts/2024-09-web-redos)\n- [GitHub Commit](https://github.com/pillarjs/path-to-regexp/commit/f01c26a013b1889f0c217c643964513acf17f6a4)\n",
+      "epssDetails": {
+        "percentile": "0.25664",
+        "probability": "0.00086",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-52798"
+        ],
+        "CWE": [
+          "CWE-1333"
+        ],
+        "GHSA": [
+          "GHSA-rhx6-c78j-4q9w"
+        ]
+      },
+      "packageName": "path-to-regexp",
+      "proprietary": false,
+      "creationTime": "2024-12-06T07:48:23.835603Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-12-05T22:40:47Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-12-06T07:48:24.198166Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-04-06T10:02:44.333400Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "path-to-regexp@0.1.7"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.21.2",
+        "path-to-regexp@0.1.12"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "path-to-regexp",
+      "version": "0.1.7"
+    },
+    {
+      "id": "SNYK-JS-SEND-7926862",
+      "title": "Cross-site Scripting",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "credit": [
+        "Adam Korcz"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.19.0",
+          ">=1.0.0-beta.1 <1.1.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "0.19.0",
+        "1.1.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "low",
+      "cvssScore": 2.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "send",
+      "references": [
+        {
+          "url": "https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 4.7,
+          "modificationTime": "2024-09-21T01:11:53.646986Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5,
+          "modificationTime": "2024-09-11T13:48:17.800297Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2.1,
+          "cvssVersion": "4.0",
+          "modificationTime": "2024-09-11T13:12:26.132451Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:12:26.132451Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 4.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-21T01:11:53.646986Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:48:17.800297Z"
+        }
+      ],
+      "description": "## Overview\n[send](https://github.com/pillarjs/send) is a Better streaming static file server with Range and conditional-GET support\n\nAffected versions of this package are vulnerable to Cross-site Scripting due to improper user input sanitization passed to the `SendStream.redirect()` function, which executes untrusted code. An attacker can execute arbitrary code by manipulating the input parameters to this method.\r\n\r\n**Note:**\r\n\r\nExploiting this vulnerability requires the following:\r\n\r\n1) The attacker needs to control the input to `response.redirect()`\r\n\r\n2) Express MUST NOT redirect before the template appears\r\n\r\n3) The browser MUST NOT complete redirection before\r\n\r\n4) The user MUST click on the link in the template\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `send` to version 0.19.0, 1.1.0 or higher.\n## References\n- [GitHub Commit](https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35)\n",
+      "epssDetails": {
+        "percentile": "0.24762",
+        "probability": "0.00081",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-43799"
+        ],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "packageName": "send",
+      "proprietary": false,
+      "creationTime": "2024-09-11T06:19:15.660255Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-10T15:15:17Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-11T11:48:01.490359Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-09-21T01:11:53.646986Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "send@0.18.0"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.20.0",
+        "send@0.19.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "send",
+      "version": "0.18.0"
+    },
+    {
+      "id": "SNYK-JS-SEND-7926862",
+      "title": "Cross-site Scripting",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "credit": [
+        "Adam Korcz"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0.19.0",
+          ">=1.0.0-beta.1 <1.1.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "0.19.0",
+        "1.1.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "low",
+      "cvssScore": 2.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "send",
+      "references": [
+        {
+          "url": "https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 4.7,
+          "modificationTime": "2024-09-21T01:11:53.646986Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5,
+          "modificationTime": "2024-09-11T13:48:17.800297Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2.1,
+          "cvssVersion": "4.0",
+          "modificationTime": "2024-09-11T13:12:26.132451Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:12:26.132451Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 4.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-21T01:11:53.646986Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:48:17.800297Z"
+        }
+      ],
+      "description": "## Overview\n[send](https://github.com/pillarjs/send) is a Better streaming static file server with Range and conditional-GET support\n\nAffected versions of this package are vulnerable to Cross-site Scripting due to improper user input sanitization passed to the `SendStream.redirect()` function, which executes untrusted code. An attacker can execute arbitrary code by manipulating the input parameters to this method.\r\n\r\n**Note:**\r\n\r\nExploiting this vulnerability requires the following:\r\n\r\n1) The attacker needs to control the input to `response.redirect()`\r\n\r\n2) Express MUST NOT redirect before the template appears\r\n\r\n3) The browser MUST NOT complete redirection before\r\n\r\n4) The user MUST click on the link in the template\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `send` to version 0.19.0, 1.1.0 or higher.\n## References\n- [GitHub Commit](https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35)\n",
+      "epssDetails": {
+        "percentile": "0.24762",
+        "probability": "0.00081",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-43799"
+        ],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "packageName": "send",
+      "proprietary": false,
+      "creationTime": "2024-09-11T06:19:15.660255Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-10T15:15:17Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-11T11:48:01.490359Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-09-21T01:11:53.646986Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "serve-static@1.15.0",
+        "send@0.18.0"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.21.0",
+        "serve-static@1.16.2",
+        "send@0.19.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "send",
+      "version": "0.18.0"
+    },
+    {
+      "id": "SNYK-JS-SERIALIZEJAVASCRIPT-6147607",
+      "title": "Cross-site Scripting (XSS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N/E:P",
+      "credit": [
+        "redonkulus"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<6.0.2"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "6.0.2"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 6.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "serialize-javascript",
+      "references": [
+        {
+          "url": "https://github.com/yahoo/serialize-javascript/commit/f27d65d3de42affe2aac14607066c293891cec4e",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/yahoo/serialize-javascript/issues/172",
+          "title": "GitHub Issue"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2025-02-11T01:13:10.902488Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2025-02-10T14:04:52.705440Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-02-10T17:10:24.204563Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-02-11T01:13:10.902488Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-02-10T14:04:52.705440Z"
+        }
+      ],
+      "description": "## Overview\n[serialize-javascript](https://www.npmjs.com/package/serialize-javascript) is a package to serialize JavaScript to a superset of JSON that includes regular expressions and functions.\n\nAffected versions of this package are vulnerable to Cross-site Scripting (XSS) due to unsanitized URLs. An Attacker can introduce unsafe `HTML` characters through non-http `URLs`.\n## PoC\n```js\r\nconst serialize = require('serialize-javascript');\r\n\r\nlet x = serialize({\r\n    x: new URL(\"x:</script>\")\r\n});\r\n\r\nconsole.log(x)\r\n```\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `serialize-javascript` to version 6.0.2 or higher.\n## References\n- [GitHub Commit](https://github.com/yahoo/serialize-javascript/commit/f27d65d3de42affe2aac14607066c293891cec4e)\n- [GitHub Issue](https://github.com/yahoo/serialize-javascript/issues/172)\n",
+      "epssDetails": {
+        "percentile": "0.71299",
+        "probability": "0.00696",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-11831"
+        ],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "packageName": "serialize-javascript",
+      "proprietary": false,
+      "creationTime": "2024-01-09T11:17:57.203071Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-01-09T00:19:08Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-01-09T12:13:57.387613Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-02-11T01:13:10.902488Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "package.json@*",
+        "mocha@10.2.0",
+        "serialize-javascript@6.0.0"
+      ],
+      "upgradePath": [
+        false,
+        "mocha@10.6.0",
+        "serialize-javascript@6.0.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "serialize-javascript",
+      "version": "6.0.0"
+    },
+    {
+      "id": "SNYK-JS-SERVESTATIC-7926865",
+      "title": "Cross-site Scripting",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "credit": [
+        "Adam Korcz"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<1.16.0",
+          ">=2.0.0 <2.1.0"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "1.16.0",
+        "2.1.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "low",
+      "cvssScore": 2.1,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "serve-static",
+      "references": [
+        {
+          "url": "https://github.com/expressjs/serve-static/commit/0c11fad159898cdc69fd9ab63269b72468ecaf6b",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/expressjs/serve-static/commit/ce730896fddce1588111d9ef6fdf20896de5c6fa",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 4.7,
+          "modificationTime": "2024-09-21T01:11:59.044439Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5,
+          "modificationTime": "2024-09-11T13:49:16.848270Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2.1,
+          "cvssVersion": "4.0",
+          "modificationTime": "2024-09-11T12:14:57.834182Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T12:14:57.834182Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 4.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-21T01:11:59.044439Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-09-11T13:49:16.848270Z"
+        }
+      ],
+      "description": "## Overview\n[serve-static](https://github.com/expressjs/serve-static) is a server.\n\nAffected versions of this package are vulnerable to Cross-site Scripting due to improper sanitization of user input in the `redirect` function. An attacker can manipulate the redirection process by injecting malicious code into the input. \r\n\r\n\r\n**Note**\r\n\r\nTo exploit this vulnerability, the following conditions are required:\r\n\r\n1) The attacker should be able to control the input to `response.redirect()`\r\n\r\n2) express must not redirect before the template appears\r\n\r\n3) the browser must not complete redirection before:\r\n\r\n4) the user must click on the link in the template\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `serve-static` to version 1.16.0, 2.1.0 or higher.\n## References\n- [GitHub Commit](https://github.com/expressjs/serve-static/commit/0c11fad159898cdc69fd9ab63269b72468ecaf6b)\n- [GitHub Commit](https://github.com/expressjs/serve-static/commit/ce730896fddce1588111d9ef6fdf20896de5c6fa)\n",
+      "epssDetails": {
+        "percentile": "0.41755",
+        "probability": "0.00194",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-43800"
+        ],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "packageName": "serve-static",
+      "proprietary": false,
+      "creationTime": "2024-09-11T06:31:22.554663Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-09-10T15:15:17Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-09-11T12:14:52.762373Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-09-21T01:11:59.044439Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "package.json@*",
+        "express@4.18.2",
+        "serve-static@1.15.0"
+      ],
+      "upgradePath": [
+        false,
+        "express@4.20.0",
+        "serve-static@1.16.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "serve-static",
+      "version": "1.15.0"
+    },
+    {
+      "id": "SNYK-JS-WS-7266574",
+      "title": "Denial of Service (DoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+      "credit": [
+        "Ryan LaPointe"
+      ],
+      "semver": {
+        "vulnerable": [
+          ">=2.1.0 <5.2.4",
+          ">=6.0.0 <6.2.3",
+          ">=7.0.0 <7.5.10",
+          ">=8.0.0 <8.17.1"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "5.2.4",
+        "6.2.3",
+        "7.5.10",
+        "8.17.1"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "high",
+      "cvssScore": 7.5,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "ws",
+      "references": [
+        {
+          "url": "https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/issues/2230",
+          "title": "GitHub Issue"
+        },
+        {
+          "url": "https://github.com/websockets/ws/pull/2231",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://github.com/websockets/ws/releases/tag/8.17.1",
+          "title": "GitHub Release"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2024-08-21T13:36:47.485619Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-11-14T13:19:29.299224Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-08-21T13:36:47.485619Z"
+        }
+      ],
+      "description": "## Overview\n[ws](https://www.npmjs.com/package/ws) is a simple to use websocket client, server and console for node.js.\n\nAffected versions of this package are vulnerable to Denial of Service (DoS) when the number of received headers exceed the `server.maxHeadersCount` or `request.maxHeadersCount` threshold.\r\n\r\n## Workaround\r\n\r\nThis issue can be mitigating by following these steps:\r\n\r\n1. Reduce the maximum allowed length of the request headers using the `--max-http-header-size=size` and/or the `maxHeaderSize` options so\r\nthat no more headers than the `server.maxHeadersCount` limit can be sent.\r\n\r\n2. Set `server.maxHeadersCount` to 0 so that no limit is applied.\n## PoC\n```js\r\n\r\nconst http = require('http');\r\nconst WebSocket = require('ws');\r\n\r\nconst server = http.createServer();\r\n\r\nconst wss = new WebSocket.Server({ server });\r\n\r\nserver.listen(function () {\r\n  const chars = \"!#$%&'*+-.0123456789abcdefghijklmnopqrstuvwxyz^_`|~\".split('');\r\n  const headers = {};\r\n  let count = 0;\r\n\r\n  for (let i = 0; i < chars.length; i++) {\r\n    if (count === 2000) break;\r\n\r\n    for (let j = 0; j < chars.length; j++) {\r\n      const key = chars[i] + chars[j];\r\n      headers[key] = 'x';\r\n\r\n      if (++count === 2000) break;\r\n    }\r\n  }\r\n\r\n  headers.Connection = 'Upgrade';\r\n  headers.Upgrade = 'websocket';\r\n  headers['Sec-WebSocket-Key'] = 'dGhlIHNhbXBsZSBub25jZQ==';\r\n  headers['Sec-WebSocket-Version'] = '13';\r\n\r\n  const request = http.request({\r\n    headers: headers,\r\n    host: '127.0.0.1',\r\n    port: server.address().port\r\n  });\r\n\r\n  request.end();\r\n});\r\n\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `ws` to version 5.2.4, 6.2.3, 7.5.10, 8.17.1 or higher.\n## References\n- [GitHub Commit](https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f)\n- [GitHub Commit](https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e)\n- [GitHub Commit](https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c)\n- [GitHub Commit](https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63)\n- [GitHub Issue](https://github.com/websockets/ws/issues/2230)\n- [GitHub PR](https://github.com/websockets/ws/pull/2231)\n- [GitHub Release](https://github.com/websockets/ws/releases/tag/8.17.1)\n",
+      "epssDetails": {
+        "percentile": "0.66921",
+        "probability": "0.00541",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-37890"
+        ],
+        "CWE": [
+          "CWE-400"
+        ]
+      },
+      "packageName": "ws",
+      "proprietary": false,
+      "creationTime": "2024-06-17T14:34:03.689299Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-06-16T13:35:43Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-06-17T14:34:03.928602Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-11-14T13:19:29.299224Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "package.json@*",
+        "socket.io@4.7.2",
+        "engine.io@6.5.2",
+        "ws@8.11.0"
+      ],
+      "upgradePath": [
+        false,
+        "socket.io@4.7.2",
+        "engine.io@6.5.5",
+        "ws@8.17.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "ws",
+      "version": "8.11.0"
+    },
+    {
+      "id": "SNYK-JS-WS-7266574",
+      "title": "Denial of Service (DoS)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+      "credit": [
+        "Ryan LaPointe"
+      ],
+      "semver": {
+        "vulnerable": [
+          ">=2.1.0 <5.2.4",
+          ">=6.0.0 <6.2.3",
+          ">=7.0.0 <7.5.10",
+          ">=8.0.0 <8.17.1"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "5.2.4",
+        "6.2.3",
+        "7.5.10",
+        "8.17.1"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "high",
+      "cvssScore": 7.5,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "ws",
+      "references": [
+        {
+          "url": "https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/websockets/ws/issues/2230",
+          "title": "GitHub Issue"
+        },
+        {
+          "url": "https://github.com/websockets/ws/pull/2231",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://github.com/websockets/ws/releases/tag/8.17.1",
+          "title": "GitHub Release"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2024-08-21T13:36:47.485619Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-11-14T13:19:29.299224Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-08-21T13:36:47.485619Z"
+        }
+      ],
+      "description": "## Overview\n[ws](https://www.npmjs.com/package/ws) is a simple to use websocket client, server and console for node.js.\n\nAffected versions of this package are vulnerable to Denial of Service (DoS) when the number of received headers exceed the `server.maxHeadersCount` or `request.maxHeadersCount` threshold.\r\n\r\n## Workaround\r\n\r\nThis issue can be mitigating by following these steps:\r\n\r\n1. Reduce the maximum allowed length of the request headers using the `--max-http-header-size=size` and/or the `maxHeaderSize` options so\r\nthat no more headers than the `server.maxHeadersCount` limit can be sent.\r\n\r\n2. Set `server.maxHeadersCount` to 0 so that no limit is applied.\n## PoC\n```js\r\n\r\nconst http = require('http');\r\nconst WebSocket = require('ws');\r\n\r\nconst server = http.createServer();\r\n\r\nconst wss = new WebSocket.Server({ server });\r\n\r\nserver.listen(function () {\r\n  const chars = \"!#$%&'*+-.0123456789abcdefghijklmnopqrstuvwxyz^_`|~\".split('');\r\n  const headers = {};\r\n  let count = 0;\r\n\r\n  for (let i = 0; i < chars.length; i++) {\r\n    if (count === 2000) break;\r\n\r\n    for (let j = 0; j < chars.length; j++) {\r\n      const key = chars[i] + chars[j];\r\n      headers[key] = 'x';\r\n\r\n      if (++count === 2000) break;\r\n    }\r\n  }\r\n\r\n  headers.Connection = 'Upgrade';\r\n  headers.Upgrade = 'websocket';\r\n  headers['Sec-WebSocket-Key'] = 'dGhlIHNhbXBsZSBub25jZQ==';\r\n  headers['Sec-WebSocket-Version'] = '13';\r\n\r\n  const request = http.request({\r\n    headers: headers,\r\n    host: '127.0.0.1',\r\n    port: server.address().port\r\n  });\r\n\r\n  request.end();\r\n});\r\n\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `ws` to version 5.2.4, 6.2.3, 7.5.10, 8.17.1 or higher.\n## References\n- [GitHub Commit](https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f)\n- [GitHub Commit](https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e)\n- [GitHub Commit](https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c)\n- [GitHub Commit](https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63)\n- [GitHub Issue](https://github.com/websockets/ws/issues/2230)\n- [GitHub PR](https://github.com/websockets/ws/pull/2231)\n- [GitHub Release](https://github.com/websockets/ws/releases/tag/8.17.1)\n",
+      "epssDetails": {
+        "percentile": "0.66921",
+        "probability": "0.00541",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-37890"
+        ],
+        "CWE": [
+          "CWE-400"
+        ]
+      },
+      "packageName": "ws",
+      "proprietary": false,
+      "creationTime": "2024-06-17T14:34:03.689299Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-06-16T13:35:43Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2024-06-17T14:34:03.928602Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-11-14T13:19:29.299224Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "package.json@*",
+        "socket.io@4.7.2",
+        "socket.io-adapter@2.5.2",
+        "ws@8.11.0"
+      ],
+      "upgradePath": [
+        false,
+        "socket.io@4.7.2",
+        "socket.io-adapter@2.5.5",
+        "ws@8.17.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "ws",
+      "version": "8.11.0"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 147,
+  "org": "hezronuna",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "npm",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "18 vulnerable dependency paths",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JS-BRACES-6838727",
+        "title": "Excessive Platform Resource Consumption within a Loop",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+        "credit": [
+          "Mário Teixeira"
+        ],
+        "semver": {
+          "vulnerable": [
+            "<3.0.3"
+          ]
+        },
+        "exploit": "Proof of Concept",
+        "fixedIn": [
+          "3.0.3"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "js",
+        "severity": "high",
+        "cvssScore": 7.5,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "braces",
+        "references": [
+          {
+            "url": "https://github.com/micromatch/braces/commit/a5851e57f45c3431a94d83fc565754bc10f5bbc3",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/micromatch/braces/issues/35",
+            "title": "GitHub Issue"
+          },
+          {
+            "url": "https://github.com/micromatch/braces/pull/37",
+            "title": "GitHub PR"
+          },
+          {
+            "url": "https://github.com/micromatch/braces/blob/98414f9f1fabe021736e26836d8306d5de747e0d/lib/parse.js%23L308",
+            "title": "Vulnerable Code"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "high",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 7.5,
+            "modificationTime": "2024-05-15T13:35:48.924600Z"
+          },
+          {
+            "assigner": "SUSE",
+            "severity": "high",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 7.5,
+            "modificationTime": "2024-10-30T11:04:23.675370Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-02-18T11:30:43.161093Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-05-15T13:35:48.924600Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "assigner": "SUSE",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-10-30T11:04:23.675370Z"
+          }
+        ],
+        "description": "## Overview\n[braces](https://www.npmjs.com/package/braces) is a Bash-like brace expansion, implemented in JavaScript.\n\nAffected versions of this package are vulnerable to Excessive Platform Resource Consumption within a Loop due improper limitation of the number of characters it can handle, through the `parse` function. An attacker can cause the application to allocate excessive memory and potentially crash by sending imbalanced braces as input.\n## PoC\n```js\r\nconst { braces } = require('micromatch');\r\n\r\nconsole.log(\"Executing payloads...\");\r\n\r\nconst maxRepeats = 10;\r\n\r\nfor (let repeats = 1; repeats <= maxRepeats; repeats += 1) {\r\n  const payload = '{'.repeat(repeats*90000);\r\n\r\n  console.log(`Testing with ${repeats} repeats...`);\r\n  const startTime = Date.now();\r\n  braces(payload);\r\n  const endTime = Date.now();\r\n  const executionTime = endTime - startTime;\r\n  console.log(`Regex executed in ${executionTime / 1000}s.\\n`);\r\n} \r\n```\n## Remediation\nUpgrade `braces` to version 3.0.3 or higher.\n## References\n- [GitHub Commit](https://github.com/micromatch/braces/commit/a5851e57f45c3431a94d83fc565754bc10f5bbc3)\n- [GitHub Issue](https://github.com/micromatch/braces/issues/35)\n- [GitHub PR](https://github.com/micromatch/braces/pull/37)\n- [Vulnerable Code](https://github.com/micromatch/braces/blob/98414f9f1fabe021736e26836d8306d5de747e0d/lib/parse.js#L308)\n",
+        "epssDetails": {
+          "percentile": "0.37521",
+          "probability": "0.00159",
+          "modelVersion": "v2025.03.14"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2024-4068"
+          ],
+          "CWE": [
+            "CWE-1050"
+          ]
+        },
+        "packageName": "braces",
+        "proprietary": false,
+        "creationTime": "2024-05-13T14:36:53.707650Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2024-05-13T10:40:14Z",
+        "exploitDetails": {
+          "sources": [
+            "Snyk"
+          ],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Proof of Concept",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Proof of Concept",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "npm",
+        "publicationTime": "2024-05-13T14:36:53.942014Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2025-02-18T11:30:43.161093Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "package.json@*",
+          "mocha@10.2.0",
+          "chokidar@3.5.3",
+          "braces@3.0.2"
+        ],
+        "upgradePath": [
+          false,
+          "mocha@10.2.0",
+          "chokidar@3.5.3",
+          "braces@3.0.3"
+        ],
+        "isUpgradable": true,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "braces",
+        "version": "3.0.2",
+        "severityWithCritical": "high"
+      },
+      {
+        "id": "SNYK-JS-WS-7266574",
+        "title": "Denial of Service (DoS)",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+        "credit": [
+          "Ryan LaPointe"
+        ],
+        "semver": {
+          "vulnerable": [
+            ">=2.1.0 <5.2.4",
+            ">=6.0.0 <6.2.3",
+            ">=7.0.0 <7.5.10",
+            ">=8.0.0 <8.17.1"
+          ]
+        },
+        "exploit": "Proof of Concept",
+        "fixedIn": [
+          "5.2.4",
+          "6.2.3",
+          "7.5.10",
+          "8.17.1"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "js",
+        "severity": "high",
+        "cvssScore": 7.5,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "ws",
+        "references": [
+          {
+            "url": "https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/websockets/ws/issues/2230",
+            "title": "GitHub Issue"
+          },
+          {
+            "url": "https://github.com/websockets/ws/pull/2231",
+            "title": "GitHub PR"
+          },
+          {
+            "url": "https://github.com/websockets/ws/releases/tag/8.17.1",
+            "title": "GitHub Release"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.9,
+            "modificationTime": "2024-08-21T13:36:47.485619Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-11-14T13:19:29.299224Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.9,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-08-21T13:36:47.485619Z"
+          }
+        ],
+        "description": "## Overview\n[ws](https://www.npmjs.com/package/ws) is a simple to use websocket client, server and console for node.js.\n\nAffected versions of this package are vulnerable to Denial of Service (DoS) when the number of received headers exceed the `server.maxHeadersCount` or `request.maxHeadersCount` threshold.\r\n\r\n## Workaround\r\n\r\nThis issue can be mitigating by following these steps:\r\n\r\n1. Reduce the maximum allowed length of the request headers using the `--max-http-header-size=size` and/or the `maxHeaderSize` options so\r\nthat no more headers than the `server.maxHeadersCount` limit can be sent.\r\n\r\n2. Set `server.maxHeadersCount` to 0 so that no limit is applied.\n## PoC\n```js\r\n\r\nconst http = require('http');\r\nconst WebSocket = require('ws');\r\n\r\nconst server = http.createServer();\r\n\r\nconst wss = new WebSocket.Server({ server });\r\n\r\nserver.listen(function () {\r\n  const chars = \"!#$%&'*+-.0123456789abcdefghijklmnopqrstuvwxyz^_`|~\".split('');\r\n  const headers = {};\r\n  let count = 0;\r\n\r\n  for (let i = 0; i < chars.length; i++) {\r\n    if (count === 2000) break;\r\n\r\n    for (let j = 0; j < chars.length; j++) {\r\n      const key = chars[i] + chars[j];\r\n      headers[key] = 'x';\r\n\r\n      if (++count === 2000) break;\r\n    }\r\n  }\r\n\r\n  headers.Connection = 'Upgrade';\r\n  headers.Upgrade = 'websocket';\r\n  headers['Sec-WebSocket-Key'] = 'dGhlIHNhbXBsZSBub25jZQ==';\r\n  headers['Sec-WebSocket-Version'] = '13';\r\n\r\n  const request = http.request({\r\n    headers: headers,\r\n    host: '127.0.0.1',\r\n    port: server.address().port\r\n  });\r\n\r\n  request.end();\r\n});\r\n\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `ws` to version 5.2.4, 6.2.3, 7.5.10, 8.17.1 or higher.\n## References\n- [GitHub Commit](https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f)\n- [GitHub Commit](https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e)\n- [GitHub Commit](https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c)\n- [GitHub Commit](https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63)\n- [GitHub Issue](https://github.com/websockets/ws/issues/2230)\n- [GitHub PR](https://github.com/websockets/ws/pull/2231)\n- [GitHub Release](https://github.com/websockets/ws/releases/tag/8.17.1)\n",
+        "epssDetails": {
+          "percentile": "0.66921",
+          "probability": "0.00541",
+          "modelVersion": "v2025.03.14"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2024-37890"
+          ],
+          "CWE": [
+            "CWE-400"
+          ]
+        },
+        "packageName": "ws",
+        "proprietary": false,
+        "creationTime": "2024-06-17T14:34:03.689299Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2024-06-16T13:35:43Z",
+        "exploitDetails": {
+          "sources": [
+            "Snyk"
+          ],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Proof of Concept",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Proof of Concept",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "npm",
+        "publicationTime": "2024-06-17T14:34:03.928602Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2024-11-14T13:19:29.299224Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "package.json@*",
+          "socket.io@4.7.2",
+          "socket.io-adapter@2.5.2",
+          "ws@8.11.0"
+        ],
+        "upgradePath": [
+          false,
+          "socket.io@4.7.2",
+          "socket.io-adapter@2.5.5",
+          "ws@8.17.1"
+        ],
+        "isUpgradable": true,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "ws",
+        "version": "8.11.0",
+        "severityWithCritical": "high"
+      }
+    ],
+    "upgrade": {
+      "express@4.18.2": {
+        "upgradeTo": "express@4.21.2",
+        "upgrades": [
+          "path-to-regexp@0.1.7",
+          "cookie@0.5.0",
+          "send@0.18.0",
+          "body-parser@1.20.1",
+          "express@4.18.2",
+          "path-to-regexp@0.1.7",
+          "serve-static@1.15.0",
+          "express@4.18.2"
+        ],
+        "vulns": [
+          "SNYK-JS-PATHTOREGEXP-8482416",
+          "SNYK-JS-COOKIE-8163060",
+          "SNYK-JS-SEND-7926862",
+          "SNYK-JS-BODYPARSER-7926860",
+          "SNYK-JS-EXPRESS-7926867",
+          "SNYK-JS-PATHTOREGEXP-7925106",
+          "SNYK-JS-SERVESTATIC-7926865",
+          "SNYK-JS-EXPRESS-6474509"
+        ]
+      },
+      "mocha@10.2.0": {
+        "upgradeTo": "mocha@11.0.1",
+        "upgrades": [
+          "brace-expansion@1.1.11",
+          "inflight@1.0.6",
+          "serialize-javascript@6.0.0",
+          "nanoid@3.3.3"
+        ],
+        "vulns": [
+          "SNYK-JS-BRACEEXPANSION-9789073",
+          "SNYK-JS-INFLIGHT-6095116",
+          "SNYK-JS-SERIALIZEJAVASCRIPT-6147607",
+          "SNYK-JS-NANOID-8492085"
+        ]
+      },
+      "socket.io@4.7.2": {
+        "upgradeTo": "socket.io@4.8.0",
+        "upgrades": [
+          "cookie@0.4.2"
+        ],
+        "vulns": [
+          "SNYK-JS-COOKIE-8163060"
+        ]
+      }
+    },
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 14,
+  "projectName": "package.json",
+  "displayTargetFile": "package-lock.json",
+  "hasUnknownVersions": false,
+  "path": "C:\\Users\\hezro\\Documents\\Documentos\\Universidad\\Cuarto Anno\\Segundo Semestre\\Seguridad Informatica\\Laboratorios\\Laboratiorio5"
+}

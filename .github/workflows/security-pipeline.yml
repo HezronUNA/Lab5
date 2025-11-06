@@ -1,0 +1,45 @@
+name: 🛡️ Seguridad y Calidad del Código
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  security_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: 🟢 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Instalar dependencias
+        run: npm install
+
+      # 🔍 Linting
+      - name: 🧹 Ejecutar ESLint
+        run: npx eslint . --ext .js,.ts || true
+
+      # 🧪 Unit Tests (si usás Jest)
+      - name: 🧪 Ejecutar pruebas unitarias
+        run: npx jest --passWithNoTests
+
+      # 🧩 Escaneo SAST con Semgrep
+      - name: 🔒 Escaneo estático con Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "p/ci"
+
+      # ⚙️ Escaneo de vulnerabilidades con Snyk
+      - name: 🧠 Snyk Security Scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: test
