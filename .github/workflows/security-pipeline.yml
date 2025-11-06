@@ -42,3 +42,5 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         continue-on-error: true
+        with:
+          args: --all-projects --detection-depth=4
