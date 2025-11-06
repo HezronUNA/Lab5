@@ -1,6 +1,6 @@
 // modulo de seguridad mejorado para UNA Chat
 
-module.exports = {
+export default {
 
     // Lista blanca de dominios confiables para medios
     trustedDomains: [
