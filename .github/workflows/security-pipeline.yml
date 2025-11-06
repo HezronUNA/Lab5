@@ -63,6 +63,6 @@ jobs:
         uses: anchore/scan-action@v4
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/una-chat:development
-          fail-build: false   # para no detener el pipeline
-          severity-cutoff: medium
+          fail-build: true
+          severity-cutoff: critical
           output-format: table
