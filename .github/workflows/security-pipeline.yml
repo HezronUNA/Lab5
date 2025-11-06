@@ -28,9 +28,7 @@ jobs:
 
       # 🧪 Unit Tests (Jest)
       - name: 🧪 Ejecutar pruebas unitarias
-        run: |
-          chmod +x ./node_modules/.bin/jest
-          npx jest --passWithNoTests
+        run: npm test
 
       # 🧩 Escaneo SAST con Semgrep
       - name: 🔒 Escaneo estático con Semgrep
