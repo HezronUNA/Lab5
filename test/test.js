@@ -1,5 +1,5 @@
-﻿const assert = require("assert");
-const val = require("../libs/unalib");
+﻿import assert from "assert";
+import val from "../libs/unalib.js";
 
 describe("unalib - Pruebas Simplificadas", function(){
   

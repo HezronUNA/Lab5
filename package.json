@@ -4,11 +4,22 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "*",
-    "mocha": "^10.2.0",
     "socket.io": "*"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "set NODE_ENV=test&& node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "jest": "^30.2.0",
+    "typescript-eslint": "^8.46.3",
+    "supertest": "^7.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
   }
 }
