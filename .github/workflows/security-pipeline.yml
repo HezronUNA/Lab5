@@ -26,9 +26,11 @@ jobs:
       - name: 🧹 Ejecutar ESLint
         run: npx eslint . --ext .js,.ts || true
 
-      # 🧪 Unit Tests (si usás Jest)
+      # 🧪 Unit Tests (Jest)
       - name: 🧪 Ejecutar pruebas unitarias
-        run: npx jest --passWithNoTests
+        run: |
+          chmod +x ./node_modules/.bin/jest
+          npx jest --passWithNoTests
 
       # 🧩 Escaneo SAST con Semgrep
       - name: 🔒 Escaneo estático con Semgrep
