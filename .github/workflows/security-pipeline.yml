@@ -64,3 +64,5 @@ jobs:
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/una-chat:development
           fail-build: false   # para no detener el pipeline
+          severity-cutoff: medium
+          output-format: table
