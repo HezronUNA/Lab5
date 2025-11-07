@@ -1,4 +1,5 @@
 // npm install para descargar los paquetes...
+import 'dotenv/config';
 import validation from './libs/unalib.js';
 import express from 'express';
 import { createServer } from 'http';
