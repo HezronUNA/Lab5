@@ -13,7 +13,14 @@ export default defineConfig([
         ...globals.browser,
         ...globals.node
       }
-    } 
+    },
+    rules: {
+      // Permitir parámetros no usados que empiecen con _
+      "no-unused-vars": ["error", { 
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }]
+    }
   },
   tseslint.configs.recommended,
 ]);

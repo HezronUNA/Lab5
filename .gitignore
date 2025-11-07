@@ -5,9 +5,11 @@ package-lock.json
 # Variables de entorno (contiene secretos)
 .env
 
-# Logs
+# Logs y archivos de monitoreo
 *.log
 npm-debug.log*
+logs/
+*.log.*
 
 # Archivos del sistema
 .DS_Store
