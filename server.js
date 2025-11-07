@@ -244,4 +244,17 @@ process.on('SIGTERM', async () => {
   });
 });
 
+
+// ...existing code...
+
+// 🧪 PRUEBA: Código vulnerable para probar Semgrep
+app.get('/test-eval', (req, res) => {
+  const code = req.query.code;
+  eval(code); // ⚠️ Semgrep debería detectar esto
+  res.send('Ejecutado');
+});
+
+// ...existing code...
+
+
 export default app;
