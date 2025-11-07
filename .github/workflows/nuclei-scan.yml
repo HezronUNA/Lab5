@@ -30,7 +30,7 @@ jobs:
                  -o nuclei-report.txt
 
       - name: Upload Nuclei report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuclei-report
           path: nuclei-report.txt
