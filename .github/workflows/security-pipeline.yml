@@ -2,9 +2,9 @@ name: 🛡️ Seguridad y Calidad del Código
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "test", "master" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "test", "master" ]
 
 jobs:
   security_pipeline:
