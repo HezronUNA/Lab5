@@ -1,28 +1,36 @@
-name: 🔒 Escaneo de Seguridad con Nuclei
+name: DAST - Nuclei Scan
 
 on:
-  workflow_dispatch: # te permite ejecutarlo manualmente
+  workflow_dispatch:
   push:
-    branches:
-      - development
-      - main
+    branches: [ main, development ]
 
 jobs:
   nuclei_scan:
     runs-on: ubuntu-latest
     steps:
-      - name: 📦 Descargar código
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🚀 Ejecutar escaneo con Nuclei
-        uses: projectdiscovery/nuclei-action@main
-        with:
-          urls: "https://lab5-t3vd.onrender.com" 
-          templates: "cves/, vulnerabilities/, misconfigurations/"
-          output: "nuclei-report.txt"
+      - name: Install Nuclei
+        run: |
+          curl -s https://api.github.com/repos/projectdiscovery/nuclei/releases/latest \
+          | grep "browser_download_url.*linux_amd64.zip" \
+          | cut -d '"' -f 4 | wget -qi -
+          unzip nuclei*linux_amd64.zip
+          sudo mv nuclei /usr/local/bin/
 
-      - name: 📤 Guardar el reporte
-        uses: actions/upload-artifact@v4
+      - name: Wake up Render app
+        run: curl -s -o /dev/null https://lab5-t3vd.onrender.com
+
+      - name: Run Nuclei scan on deployed app
+        run: |
+          nuclei -u https://lab5-t3vd.onrender.com \
+                 -severity critical,high,medium \
+                 -o nuclei-report.txt
+
+      - name: Upload Nuclei report
+        uses: actions/upload-artifact@v3
         with:
           name: nuclei-report
           path: nuclei-report.txt
