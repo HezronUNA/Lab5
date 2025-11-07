@@ -29,6 +29,16 @@ jobs:
                  -severity critical,high,medium \
                  -o nuclei-report.txt
 
+      - name: 📝 Add message if report is empty
+        run: |
+          if [ ! -s nuclei-report.txt ]; then
+            echo "✅ No se encontraron vulnerabilidades en el análisis de Nuclei." > nuclei-report.txt
+            echo "🔍 Objetivo: https://lab5-t3vd.onrender.com" >> nuclei-report.txt
+            echo "📅 Fecha: $(date -u +"%Y-%m-%d %H:%M:%SZ")" >> nuclei-report.txt
+          else
+            echo "📄 Vulnerabilidades detectadas, reporte generado correctamente."
+          fi         
+
       - name: Upload Nuclei report
         uses: actions/upload-artifact@v4
         with:
