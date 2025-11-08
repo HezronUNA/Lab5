@@ -37,8 +37,9 @@ io.on('connection', function (socket) {
 });
 
 // Ruta para probar el envío de errores a Sentry
-app.get('/error', function () {
-  throw new Error('Sentry test error');
+app.get('/error', function (req, res, next) {
+  const error = new Error('Sentry test error');
+  next(error);
 });
 
 // Ruta para probar profiling + captura de excepción usando span

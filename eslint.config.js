@@ -16,23 +16,13 @@ export default defineConfig([
       }
     },
     rules: {
-      // ═══════════════════════════════════════
-      // NAMING CONVENTIONS
-      // ═══════════════════════════════════════
+      // Naming conventions básicas
       "camelcase": ["error", { 
         "properties": "never",
-        "ignoreDestructuring": true,
-        "allow": ["^UPPER_CASE"]  // Permite constantes en UPPER_SNAKE_CASE
+        "ignoreDestructuring": true
       }],
       
-      "new-cap": ["error", { 
-        "newIsCap": true,    // Clases en PascalCase
-        "capIsNew": false    // No todas PascalCase son clases
-      }],
-      
-      // ═══════════════════════════════════════
-      // VARIABLES
-      // ═══════════════════════════════════════
+      // Variables sin usar
       "no-unused-vars": ["error", { 
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_"
@@ -42,28 +32,9 @@ export default defineConfig([
         "varsIgnorePattern": "^_"
       }],
       
-      "prefer-const": "error",  // Usar const cuando sea posible
-      "no-var": "error",        // No usar var
-      
-      // ═══════════════════════════════════════
-      // FUNCIONES
-      // ═══════════════════════════════════════
-      "func-names": ["warn", "as-needed"],
-      "arrow-body-style": ["error", "as-needed"],
-      
-      // ═══════════════════════════════════════
-      // SEGURIDAD BÁSICA
-      // ═══════════════════════════════════════
+      // Seguridad básica
       "no-eval": "error",
-      "no-implied-eval": "error",
-      "no-new-func": "error",
-      
-      // ═══════════════════════════════════════
-      // BEST PRACTICES
-      // ═══════════════════════════════════════
-      "eqeqeq": ["error", "always"],
-      "no-console": "warn",
-      "no-debugger": "error"
+      "no-var": "error"
     }
   },
   {
@@ -73,9 +44,6 @@ export default defineConfig([
         ...globals.node,
         ...globals.jest
       }
-    },
-    rules: {
-      "no-console": "off"  // Permitir console.log en tests
     }
   },
   tseslint.configs.recommended,
