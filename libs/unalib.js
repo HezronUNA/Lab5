@@ -61,7 +61,7 @@ export default {
     isDomainTrusted: function(url) {
       try {
         // Extraer el hostname usando regex para compatibilidad
-        var matches = url.match(/^https?:\/\/([^\/\?#]+)/i);
+        var matches = url.match(/^https?:\/\/([^/?#]+)/i);
         if (!matches) return false;
         
         var hostname = matches[1].toLowerCase();
@@ -77,7 +77,7 @@ export default {
           }
         }
         return false;
-      } catch (e) {
+      } catch {
         return false;
       }
     },
@@ -126,16 +126,15 @@ export default {
       // inicializacion lazy
       var isValid = false;
       // expresion regular copiada de StackOverflow
-      var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/i;
+      var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/i;
   
       // validacion Regex
       try {
         isValid = re.test(phone);
       } catch (e) {
         console.log(e);
-      } finally {
-          return isValid;
       }
+      return isValid;
       // fin del try-catch block
     },
   
@@ -195,7 +194,7 @@ export default {
         }
         
         // Regex más estricta para YouTube que solo acepta dominios oficiales
-        var re = /^https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=)|youtu\.be\/)([\w\-]{11})(?:\S+)?$/i;
+        var re = /^https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=)|youtu\.be\/)([\w-]{11})(?:\S+)?$/i;
         
         if (!re.test(sanitizedUrl)) {
           return false;
@@ -260,7 +259,7 @@ export default {
         var id = this.getYTVideoId(url);
         
         // Validar que el ID extraído sea válido (solo caracteres alfanuméricos y guiones)
-        if (!id || !/^[\w\-]{11}$/.test(id)) {
+        if (!id || !/^[\w-]{11}$/.test(id)) {
           console.log('ID de YouTube inválido:', id);
           return '<p>Error: Video de YouTube inválido</p>';
         }
@@ -314,7 +313,7 @@ export default {
         var obj = JSON.parse(msg);
         
         // Validar estructura del objeto
-        if (!obj || typeof obj !== 'object' || !obj.hasOwnProperty('mensaje')) {
+        if (!obj || typeof obj !== 'object' || !Object.prototype.hasOwnProperty.call(obj, 'mensaje')) {
           console.log('Estructura de mensaje inválida');
           return JSON.stringify({ mensaje: 'Formato de mensaje inválido' });
         }
