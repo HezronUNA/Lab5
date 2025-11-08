@@ -35,10 +35,8 @@ jobs:
         run: npm test
 
       - name: Escaneo estatico con Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: "p/ci"
-          generateSarif: true
+        run: |
+          docker run --rm -v "${PWD}:/src" returntocorp/semgrep semgrep scan --config=auto --sarif --output=semgrep.sarif /src
 
       - name: Subir resultados Semgrep a GitHub Security
         uses: github/codeql-action/upload-sarif@v3
@@ -48,11 +46,10 @@ jobs:
           category: semgrep
 
       - name: Analisis de dependencias con Snyk
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=critical --sarif-file-output=snyk.sarif
+        run: |
+          npm install -g snyk
+          snyk auth ${{ secrets.SNYK_TOKEN }}
+          snyk test --severity-threshold=critical --sarif-file-output=snyk.sarif
 
       - name: Subir resultados Snyk a GitHub Security
         uses: github/codeql-action/upload-sarif@v3
