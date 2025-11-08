@@ -19,6 +19,9 @@ jobs:
           | cut -d '"' -f 4 | wget -qi -
           unzip nuclei*linux_amd64.zip
           sudo mv nuclei /usr/local/bin/
+          
+      - name: Update Nuclei templates
+        run: nuclei -update-templates
 
       - name: Wake up Render app
         run: curl -s -o /dev/null https://lab5-t3vd.onrender.com
@@ -27,6 +30,11 @@ jobs:
         run: |
           nuclei -u https://lab5-t3vd.onrender.com \
                  -severity critical,high,medium \
+                 -t exposures/ \
+                 -t vulnerabilities/ \
+                 -t misconfiguration/ \
+                 -t cves/ \
+                 -stats \
                  -o nuclei-report.txt
 
       - name: 📝 Add message if report is empty
