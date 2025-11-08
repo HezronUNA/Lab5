@@ -15,7 +15,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
+    "lint": "eslint . --ext .js,.ts --max-warnings 0",
+    "lint:fix": "eslint . --ext .js,.ts --fix"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

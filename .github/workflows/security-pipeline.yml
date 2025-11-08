@@ -19,10 +19,10 @@ jobs:
           node-version: 20
 
       - name: 📥 Instalar dependencias
-        run: npm install
+        run: npm ci
 
       - name: 🧹 Ejecutar ESLint
-        run: npx eslint . --ext .js,.ts --max-warnings 0
+        run: npx eslint . --ext .js,.ts
 
       - name: 🧪 Ejecutar pruebas unitarias
         run: npm test
