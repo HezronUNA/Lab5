@@ -25,7 +25,7 @@ vulnerabilidades.slice(0, 20).forEach(vuln => {
   const severity = vuln.severity || "medium";
   const cve = vuln.identifiers?.CVE?.[0] || "Sin CVE";
   let riesgo = "Moderado";
-  let recomendacion = vuln.upgradePath?.[0] ? `Actualizar a ${vuln.upgradePath?.[0]}` : "Revisar dependencia";
+  const recomendacion = vuln.upgradePath?.[0] ? `Actualizar a ${vuln.upgradePath?.[0]}` : "Revisar dependencia";
 
   switch (severity) {
     case "critical":

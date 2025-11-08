@@ -13,10 +13,10 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-var app = express();
-var http = createServer(app);
-var io = new Server(http);
-var port = process.env.PORT || 3000;
+const app = express();
+const http = createServer(app);
+const io = new Server(http);
+const port = process.env.PORT || 3000;
 
 // Middlewares de Sentry (SDK v10): el handler de errores se agrega después de las rutas
 // El SDK actual no expone Sentry.Handlers.*; el tracing y request data se auto-instrumentan.

@@ -61,17 +61,17 @@ export default {
     isDomainTrusted: function(url) {
       try {
         // Extraer el hostname usando regex para compatibilidad
-        var matches = url.match(/^https?:\/\/([^/?#]+)/i);
+        const matches = url.match(/^https?:\/\/([^/?#]+)/i);
         if (!matches) return false;
         
-        var hostname = matches[1].toLowerCase();
+        let hostname = matches[1].toLowerCase();
         
         // Remover 'www.' si existe
         hostname = hostname.replace(/^www\./, '');
         
         // Verificar si el dominio está en la lista de confianza
-        for (var i = 0; i < this.trustedDomains.length; i++) {
-          var domain = this.trustedDomains[i];
+        for (let i = 0; i < this.trustedDomains.length; i++) {
+          const domain = this.trustedDomains[i];
           if (hostname === domain || hostname.indexOf('.' + domain) !== -1) {
             return true;
           }
@@ -84,7 +84,7 @@ export default {
 
     // Detectar patrones maliciosos en URLs
     containsMaliciousPatterns: function(url) {
-      var maliciousPatterns = [
+      const maliciousPatterns = [
         /javascript:/i,
         /data:/i,
         /vbscript:/i,
@@ -109,7 +109,7 @@ export default {
     // Validación especial para Google Images (más restrictiva)
     isValidGoogleImagesUrl: function(url) {
       // Solo permitir rutas específicas y seguras de google.com
-      var googleImagesPatterns = [
+      const googleImagesPatterns = [
         /^https?:\/\/(?:www\.)?google\.com\/imgres\?/i,
         /^https?:\/\/images\.google\.com\/imgres\?/i,
         /^https?:\/\/encrypted-tbn[0-3]\.gstatic\.com\/images\?/i,
@@ -124,9 +124,9 @@ export default {
     // logica que valida si un telefono esta correcto...
     is_valid_phone: function (phone) {
       // inicializacion lazy
-      var isValid = false;
+      let isValid = false;
       // expresion regular copiada de StackOverflow
-      var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/i;
+      const re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/i;
   
       // validacion Regex
       try {
@@ -147,7 +147,7 @@ export default {
         }
         
         // Sanitizar la URL para prevenir inyecciones
-        var sanitizedUrl = url.trim();
+        const sanitizedUrl = url.trim();
         
         // Detectar patrones maliciosos
         if (this.containsMaliciousPatterns(sanitizedUrl)) {
@@ -156,9 +156,9 @@ export default {
         }
         
         // Validar formato de URL de imagen (flexible para diferentes servicios)
-        var reWithExtension = /^https?:\/\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+\.(?:jpg|jpeg|gif|png|bmp|webp|svg)(?:\?[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]*)?$/i;
-        var reImageService = /^https?:\/\/(?:images\.unsplash\.com|i\.imgur\.com|.*\.wikimedia\.org)\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+$/i;
-        var reGoogleServices = /^https?:\/\/(?:lh[3-6]\.googleusercontent\.com|drive\.google\.com|docs\.google\.com|sites\.google\.com|blogger\.googleusercontent\.com|storage\.googleapis\.com|images\.google\.com|www\.google\.com|encrypted-tbn[0-3]\.gstatic\.com|gstatic\.com)\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+$/i;
+        const reWithExtension = /^https?:\/\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+\.(?:jpg|jpeg|gif|png|bmp|webp|svg)(?:\?[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]*)?$/i;
+        const reImageService = /^https?:\/\/(?:images\.unsplash\.com|i\.imgur\.com|.*\.wikimedia\.org)\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+$/i;
+        const reGoogleServices = /^https?:\/\/(?:lh[3-6]\.googleusercontent\.com|drive\.google\.com|docs\.google\.com|sites\.google\.com|blogger\.googleusercontent\.com|storage\.googleapis\.com|images\.google\.com|www\.google\.com|encrypted-tbn[0-3]\.gstatic\.com|gstatic\.com)\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+$/i;
         
         if (!reWithExtension.test(sanitizedUrl) && !reImageService.test(sanitizedUrl) && !reGoogleServices.test(sanitizedUrl)) {
           return false;
@@ -185,7 +185,7 @@ export default {
           return false;
         }
         
-        var sanitizedUrl = url.trim();
+        const sanitizedUrl = url.trim();
         
         // Detectar patrones maliciosos
         if (this.containsMaliciousPatterns(sanitizedUrl)) {
@@ -194,14 +194,14 @@ export default {
         }
         
         // Regex más estricta para YouTube que solo acepta dominios oficiales
-        var re = /^https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=)|youtu\.be\/)([\w-]{11})(?:\S+)?$/i;
+        const re = /^https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=)|youtu\.be\/)([\w-]{11})(?:\S+)?$/i;
         
         if (!re.test(sanitizedUrl)) {
           return false;
         }
         
         // Verificar que sea específicamente YouTube (dominio confiable)
-        var hostname = sanitizedUrl.toLowerCase();
+        const hostname = sanitizedUrl.toLowerCase();
         if (!hostname.includes('youtube.com') && !hostname.includes('youtu.be')) {
           return false;
         }
@@ -221,7 +221,7 @@ export default {
           return false;
         }
         
-        var sanitizedUrl = url.trim();
+        const sanitizedUrl = url.trim();
         
         // Detectar patrones maliciosos
         if (this.containsMaliciousPatterns(sanitizedUrl)) {
@@ -230,7 +230,7 @@ export default {
         }
         
         // Regex más estricta para archivos de video
-        var re = /^https?:\/\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+\.(?:mp4|webm|ogg|avi|mov)(?:\?[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]*)?$/i;
+        const re = /^https?:\/\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+\.(?:mp4|webm|ogg|avi|mov)(?:\?[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]*)?$/i;
         
         if (!re.test(sanitizedUrl)) {
           return false;
@@ -256,7 +256,7 @@ export default {
   
     getEmbeddedCode: function (url){
       try {
-        var id = this.getYTVideoId(url);
+        const id = this.getYTVideoId(url);
         
         // Validar que el ID extraído sea válido (solo caracteres alfanuméricos y guiones)
         if (!id || !/^[\w-]{11}$/.test(id)) {
@@ -265,10 +265,10 @@ export default {
         }
         
         // Sanitizar el ID aunque ya fue validado
-        var sanitizedId = this.sanitizeHtml(id);
+        const sanitizedId = this.sanitizeHtml(id);
         
         // Generar iframe con configuración de seguridad mejorada
-        var code = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + sanitizedId + '" ' +
+        const code = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + sanitizedId + '" ' +
                    'frameborder="0" ' +
                    'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ' +
                    'allowfullscreen ' +
@@ -284,16 +284,16 @@ export default {
     getImageTag: function(url){
       // La URL ya fue validada, no necesita sanitización adicional
       // Solo escapamos comillas para evitar problemas con atributos HTML
-      var safeUrl = url.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
-      var tag = '<img src="' + safeUrl + '" style="max-height: 400px;max-width: 400px;" alt="Imagen segura" loading="lazy">';
+      const safeUrl = url.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+      const tag = '<img src="' + safeUrl + '" style="max-height: 400px;max-width: 400px;" alt="Imagen segura" loading="lazy">';
       return tag;
     },
 
     getVideoTag: function(url){
       // La URL ya fue validada, no necesita sanitización adicional
       // Solo escapamos comillas para evitar problemas con atributos HTML
-      var safeUrl = url.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
-      var tag = '<video controls style="max-height: 400px;max-width: 400px;" preload="metadata"><source src="' + safeUrl + '" type="video/mp4">Tu navegador no soporta el elemento video.</video>';
+      const safeUrl = url.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+      const tag = '<video controls style="max-height: 400px;max-width: 400px;" preload="metadata"><source src="' + safeUrl + '" type="video/mp4">Tu navegador no soporta el elemento video.</video>';
       return tag;
     },
   
@@ -310,7 +310,7 @@ export default {
       }
 
       try {
-        var obj = JSON.parse(msg);
+        const obj = JSON.parse(msg);
         
         // Validar estructura del objeto
         if (!obj || typeof obj !== 'object' || !Object.prototype.hasOwnProperty.call(obj, 'mensaje')) {
@@ -328,7 +328,7 @@ export default {
           return JSON.stringify(obj);
         }
 
-        var originalMessage = obj.mensaje.trim();
+        const originalMessage = obj.mensaje.trim();
         
         // Verificar longitud del mensaje individual
         if (originalMessage.length > 2048) {
