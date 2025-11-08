@@ -77,8 +77,6 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/una-chat:development
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/una-chat:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/una-chat:buildcache,mode=max
 
       - name: Escaneo de vulnerabilidades con Grype
         uses: anchore/scan-action@v4
