@@ -45,6 +45,7 @@ vulnerabilidades.slice(0, 20).forEach(vuln => {
   markdown += `| ${pkg} | ${version} | ${severity.toUpperCase()} | ${cve} | ${riesgo} | ${recomendacion} |\n`;
 });
 
+
 // Guardar el archivo
 fs.writeFileSync("RISK_MATRIX.md", markdown, "utf-8");
 console.log("✅ Nueva matriz de riesgo generada correctamente desde Snyk: RISK_MATRIX.md");
