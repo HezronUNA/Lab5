@@ -41,6 +41,37 @@ app.get('/error', function () {
   throw new Error('Sentry test error');
 });
 
+// Ruta para probar profiling + captura de excepción usando span
+app.get('/sentry-test', function (req, res) {
+  Sentry.startSpan({ op: 'test', name: 'My First Test Span' }, () => {
+    try {
+      Sentry.logger.info('User triggered test error', { action: 'test_error_span' });
+      // Error intencional
+      // eslint-disable-next-line no-undef
+      foo();
+    } catch (e) {
+      Sentry.captureException(e);
+    }
+  });
+  res.json({ status: 'span executed, error captured' });
+});
+
+// Ruta para probar logging (console + logger) y traces
+app.get('/sentry-log', function (req, res) {
+  console.log('Test log from /sentry-log');
+  console.warn('Test warn from /sentry-log');
+  console.error('Test error from /sentry-log');
+
+  Sentry.logger.info('User triggered test log', { action: 'test_log' });
+
+  Sentry.startSpan({ op: 'test', name: 'Log Test Span' }, () => {
+    // trabajo simulado
+    for (let i = 0; i < 1e5; i++);
+  });
+
+  res.json({ status: 'logs and span sent' });
+});
+
 // Handler de errores de Sentry después de rutas/controladores
 app.use(Sentry.expressErrorHandler());
 
