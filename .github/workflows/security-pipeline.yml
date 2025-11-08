@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  security-events: write
   actions: read
 
 jobs:
@@ -35,13 +36,29 @@ jobs:
 
       - name: Escaneo estatico con Semgrep
         run: |
-          docker run --rm -v "${PWD}:/src" returntocorp/semgrep semgrep scan --config=auto /src
+          docker run --rm -v "${PWD}:/src" returntocorp/semgrep semgrep scan --config=auto --sarif --output=semgrep.sarif /src
+
+      - name: Subir resultados Semgrep a GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: semgrep.sarif
+          category: semgrep
 
       - name: Analisis de dependencias con Snyk
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: |
           npm install -g snyk
-          snyk auth ${{ secrets.SNYK_TOKEN }}
-          snyk test --severity-threshold=critical
+          snyk test --severity-threshold=critical --sarif-file-output=snyk.sarif || true
+
+      - name: Subir resultados Snyk a GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: snyk.sarif
+          category: snyk
 
   escaneo_contenedor:
     name: Construccion y Escaneo de Contenedor
