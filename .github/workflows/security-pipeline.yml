@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: 🧹 Ejecutar ESLint
-        run: npx eslint . --ext .js,.ts || true
+        run: npx eslint . --ext .js,.ts --max-warnings 0
 
       - name: 🧪 Ejecutar pruebas unitarias
         run: npm test
@@ -30,15 +30,24 @@ jobs:
       - name: 🔒 Escaneo estático con Semgrep
         uses: returntocorp/semgrep-action@v1
         with:
-          config: "p/ci"
+          config: >-
+            .semgrep.yml
+            p/security-audit
+            p/javascript
 
       - name: 🧠 Snyk Security Scan
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        continue-on-error: true
         with:
-          args: --all-projects --detection-depth=4
+          args: --severity-threshold=critical --all-projects --detection-depth=4
+
+      - name: 📤 Upload Snyk report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: snyk-report
+          path: snyk.sarif
 
   build_and_scan_container:
     needs: security_pipeline
@@ -65,4 +74,18 @@ jobs:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/una-chat:development
           fail-build: true
           severity-cutoff: critical
+          output-format: sarif
+
+      - name: 📤 Upload Grype SARIF report
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: results.sarif
+
+      - name: 📊 Generar reporte de vulnerabilidades (tabla)
+        uses: anchore/scan-action@v4
+        if: always()
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/una-chat:development
+          fail-build: false
           output-format: table
