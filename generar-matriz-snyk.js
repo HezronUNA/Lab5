@@ -2,7 +2,9 @@
 import fs from "fs";
 
 const snykReportPath = "./snyk-report.json";
-const snykData = JSON.parse(fs.readFileSync(snykReportPath, "utf-8"));
+// Leer y limpiar el archivo JSON (remover BOM si existe)
+const rawData = fs.readFileSync(snykReportPath, "utf-8").replace(/^\uFEFF/, '');
+const snykData = JSON.parse(rawData);
 
 // Validar formato del reporte
 if (!Array.isArray(snykData.vulnerabilities)) {
