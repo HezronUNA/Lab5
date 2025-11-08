@@ -40,9 +40,15 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --severity-threshold=critical --all-projects --detection-depth=4
+          args: --severity-threshold=critical --sarif-file-output=snyk.sarif
 
-      - name: 📤 Upload Snyk report
+      - name: 📤 Upload Snyk SARIF to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: snyk.sarif
+
+      - name: 📤 Upload Snyk report as artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
