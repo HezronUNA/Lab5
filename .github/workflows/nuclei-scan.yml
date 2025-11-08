@@ -37,14 +37,31 @@ jobs:
                  -stats \
                  -o nuclei-report.txt
 
-      - name: 📝 Add message if report is empty
+      - name: 📝 Procesar reporte de Nuclei
         run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 ANÁLISIS DE RESULTADOS DE NUCLEI"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          
           if [ ! -s nuclei-report.txt ]; then
+            echo "✅ No se encontraron vulnerabilidades en el análisis de Nuclei."
+            echo "🔍 Objetivo escaneado: https://lab5-t3vd.onrender.com"
+            echo "📅 Fecha: $(date -u +"%Y-%m-%d %H:%M:%SZ")"
+            echo ""
             echo "✅ No se encontraron vulnerabilidades en el análisis de Nuclei." > nuclei-report.txt
             echo "🔍 Objetivo: https://lab5-t3vd.onrender.com" >> nuclei-report.txt
             echo "📅 Fecha: $(date -u +"%Y-%m-%d %H:%M:%SZ")" >> nuclei-report.txt
           else
-            echo "📄 Vulnerabilidades detectadas, reporte generado correctamente."
+            VULN_COUNT=$(wc -l < nuclei-report.txt)
+            echo "⚠️  VULNERABILIDADES DETECTADAS!"
+            echo "📄 Total de líneas en reporte: $VULN_COUNT"
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "📋 CONTENIDO DEL REPORTE:"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            cat nuclei-report.txt
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           fi         
 
       - name: Upload Nuclei report
