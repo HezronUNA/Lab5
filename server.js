@@ -18,9 +18,8 @@ var http = createServer(app);
 var io = new Server(http);
 var port = process.env.PORT || 3000;
 
-// Middlewares de Sentry antes de las rutas
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
+// Middlewares de Sentry (SDK v10): el handler de errores se agrega después de las rutas
+// El SDK actual no expone Sentry.Handlers.*; el tracing y request data se auto-instrumentan.
 
 // root: presentar html
 app.get('/', function (req, res) {
@@ -43,7 +42,7 @@ app.get('/error', function () {
 });
 
 // Handler de errores de Sentry después de rutas/controladores
-app.use(Sentry.Handlers.errorHandler());
+app.use(Sentry.expressErrorHandler());
 
 // Solo iniciar el servidor si no estamos en modo test
 if (process.env.NODE_ENV !== 'test') {
